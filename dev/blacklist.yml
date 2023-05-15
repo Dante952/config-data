@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: blacklist
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:blacklist;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+server:
+  port: 8083
+springdoc:
+  swagger-ui:
+    operationsSorter: method
+    path: /swagger-ui-custom.html
